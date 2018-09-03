@@ -2,17 +2,7 @@
 
 ### Setup
 
-You can manually download FidelSDK.aar and import it as a new .jar/.aar module with *File / New Module / Import .JAR/.AAR package* command.
-
-And add the following dependencies:
-
-```java
-compile 'io.card:android-sdk:5.5.1'
-compile 'com.afollestad.material-dialogs:core:0.9.4.5'
-compile 'com.koushikdutta.ion:ion:2.+'
-```
-
-Alternatively, add [jitpack.io](https://www.jitpack.io) to your root build.gradle at the end of repositories:
+Add [jitpack.io](https://www.jitpack.io) to your root build.gradle at the end of repositories:
 
 ```java
 allprojects {
@@ -27,9 +17,21 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    compile 'com.github.FidelLimited:android-sdk:1.0.3'
+    compile 'com.github.FidelLimited:android-sdk:1.1.0'
 }
 ```
+
+You can manually download FidelSDK.aar and import it as a new .jar/.aar module with *File / New Module / Import .JAR/.AAR package* command.
+
+And add the following dependencies:
+
+```java
+implementation 'io.card:android-sdk:5.5.1'
+implementation 'com.google.android.gms:play-services-auth:16.0.0'
+```
+
+Then add a new Fidel SDK module to your project.
+
 ### Sample code
 
 First, set up a programId and an apiKey (can be found in your dashboard):
