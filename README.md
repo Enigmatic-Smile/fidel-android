@@ -45,14 +45,18 @@ Fidel.programId = "your program id";
 Fidel.apiKey = "your api key";
 ```
 
-You can pass additional data with [com.google.gson.JsonObject](https://static.javadoc.io/com.google.code.gson/gson/2.6.2/com/google/gson/JsonObject.html):
+You can pass additional data with [org.json.JSONObject](https://stleary.github.io/JSON-java/org/json/JSONObject.html):
 
 ```java
-JsonObject jsonMeta = new JsonObject();
-
-jsonMeta.addProperty("id", "this-is-the-metadata-id");
-jsonMeta.addProperty("customKey1", "customValue1");
-jsonMeta.addProperty("customKey2", "customValue2");
+JSONObject jsonMeta = new JSONObject();
+try {
+    jsonMeta.put("id", "this-is-the-metadata-id");
+    jsonMeta.put("customKey1", "customValue1");
+    jsonMeta.put("customKey2", "customValue2");
+}
+    catch(JSONException e) {
+    Log.e(Fidel.FIDEL_DEBUG_TAG, e.getLocalizedMessage());
+}
 ```
 
 Then, present the Fidel activity:
