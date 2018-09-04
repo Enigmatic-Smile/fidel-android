@@ -1,0 +1,13 @@
+## 1.1.0
+- Added the United States country option
+- Updated gradle and build tools
+- Removed the 'com.afollestad.material-dialogs:core:0.9.4.5' dependency
+- Removed the 'com.koushikdutta.ion:ion:2.+' dependency
+- Doesn't use the Gson library anymore for specifying meta data. Please use the `org.json.JSONObject` object instead of `com.google.gson.JsonObject`
+- More protection against SSL exploits by using Google Play Services. When using the library on an emulator, make sure to use a emulator that has the Google Play Services.
+- Updated `appcompat-v7` library to version `26.1.0`
+- Support the use of all test card numbers. Previously some errors occured while using some of the test cards.
+- Updated checkbox consent text
+- Improved error message when the user tries to link a card that's already linked.
+- Made only the color resources used by the SDK public. The rest of the resources are private now. This will prevent future resource conflicts.
+- Added an error color resource, which you can adjust. It's called `colorError`.
