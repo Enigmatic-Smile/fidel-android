@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    compile 'com.github.FidelLimited:android-sdk:1.1.0'
+    compile 'com.github.FidelLimited:android-sdk:1.2.0'
 }
 ```
 
@@ -96,32 +96,33 @@ You can customize the topmost banner image:
 Fidel.bannerImage = Bitmap(...);
 ```
 
+
+For customizing the checkbox consent, please use the following APIs:
+
+```java
+Fidel.companyName = "Your Company Name Inc."; //(Maximum 60 characters);
+Fidel.privacyURL = "https://yourcompany.com/privacyURL"; //(must be a valid URL)
+Fidel.deleteInstructions = "Your delete instructions"; //(Maximum 60 characters);
+```
+
+The default for `companyName` is `"Company Name"`.
+The default for `deleteInstructions` is `"going to your account settings"`.
+
+#### Default country
+
+Set a default country the SDK should use with 
+```java
+Fidel.country = Fidel.Country.UNITED_KINGDOM;
+```
+When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`.
+
 ### Documentation
 
 In test environment use our VISA and Mastercard test card numbers:
 
-```
-5555000000005001
-5555000000005002
-5555000000005003
-5555000000005004
-5555000000005005
-5555000000005006
-5555000000005007
-5555000000005008
-5555000000005009
-5555000000005010
-4444000000004001
-4444000000004002
-4444000000004003
-4444000000004004
-4444000000004005
-4444000000004006
-4444000000004007
-4444000000004008
-4444000000004009
-4444000000004010
-```
+VISA: _4444000000004***_ (the last 3 numbers can be anything)
+
+Mastercard: _5555000000005***_ (the last 3 numbers can be anything)
 
 ### Feedback
 

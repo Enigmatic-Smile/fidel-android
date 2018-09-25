@@ -1,3 +1,23 @@
+## 1.2.0
+- Added the Sweden country option
+- Returns an error, when the SDK encounters it, with the `LinkResult`. Get it with `linkResult.getError()` getter.
+- Now you can customize the final consent text with the following API:
+
+    `Fidel.companyName = "Your Company Name Inc.";` (Maximum 60 characters)
+    
+    `Fidel.privacyURL = "https://yourcompany.com/privacyURL";` (must be a valid URL)
+    
+    `Fidel.deleteInstructions = "Your delete instructions";` (Maximum 60 characters)
+    
+- If the data above is not valid, the UI will not be displayed and you will get an error with the `LinkResult` in the activity result.
+- Set a default country the SDK should use with `Fidel.country = Fidel.Country.UNITED_KINGDOM`. When you set a default country, the card linking screen will not show the country picker UI.
+- Add support for more test cards. Anything with the following format:
+
+    Visa: _4444000000004***_
+    
+    Mastercard: _5555000000005***_
+
+
 ## 1.1.0
 - Added the United States country option
 - Updated gradle and build tools
