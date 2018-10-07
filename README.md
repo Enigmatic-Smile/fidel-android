@@ -124,6 +124,48 @@ VISA: _4444000000004***_ (the last 3 numbers can be anything)
 
 Mastercard: _5555000000005***_ (the last 3 numbers can be anything)
 
+#### Possible errors
+If you configured Fidel correctly, you will not receive errors after presenting the Card Linking activity. However, we respond with some suggestive errors in case something goes wrong. Please make sure that you test the integration manually as well. It's best to make sure that you configured everything correctly in your app.
+
+In case something is not configured correctly, after attempting to present the Fidel card linking activity, you can also subscribe for checking for any errors:
+
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+super.onActivityResult(requestCode, resultCode, data);
+	if(requestCode == Fidel.FIDEL_LINK_CARD_REQUEST_CODE) {
+		if(data != null && data.hasExtra(Fidel.FIDEL_LINK_CARD_RESULT_CARD)) {
+			LinkResult linkResult = data.getParcelableExtra(Fidel.FIDEL_LINK_CARD_RESULT_CARD);
+			LinkResultError error = linkResult.getError();
+			if (error != null) {
+			    Log.e("Fidel Error", "error message = " + error.message);
+			}
+		}
+	}
+}
+```
+
+In case an error is encountered we send a `LinkResultError` object with the `LinkResult` object. Retrieve the `LinkResultError` object by calling `linkResult.getError()` as demonstrated above.
+
+#### The `LinkResultError` object
+The `LinkResultError` object has the `message` and `errorCode` properties which might be useful for you. The `errorCode` property has the following codes:
+
+```java
+public enum LinkResultErrorCode {
+    USER_CANCELED,
+    INVALID_URL,
+    STRING_OVER_THE_LIMIT,
+    MISSING_MANDATORY_INFO
+}
+```
+
+- `USER_CANCELED` - Sometimes it's useful to know if the user canceled the card linking process so please check for this error, if that's the case.
+- `INVALID_URL` - If you provide an invalid `Fidel.privacyURL`, you will receive this error. Please make sure your URL matches the `Patterns.WEB_URL` pattern.
+- `STRING_OVER_THE_LIMIT` - We send this error in case your `Fidel.deleteInstructions` or `Fidel.companyName` exceed *60* characters.
+- `MISSING_MANDATORY_INFO` - Some of the mandatory information necessary to configure the SDK were not provided. The following are the mandatory info you need to provide:
+	1. `Fidel.apiKey`
+	2. `Fidel.programId`
+
 ### Feedback
 
 The FIDEL SDK is in active development, we welcome your feedback!
