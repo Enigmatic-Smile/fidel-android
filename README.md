@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    compile 'com.github.FidelLimited:android-sdk:1.2.0'
+    compile 'com.github.FidelLimited:android-sdk:1.2.1'
 }
 ```
 
@@ -96,6 +96,7 @@ You can customize the topmost banner image:
 Fidel.bannerImage = Bitmap(...);
 ```
 
+If you don't set a banner, we'll just free up the space reserved for it on the top of screen.
 
 For customizing the checkbox consent, please use the following APIs:
 
@@ -114,7 +115,7 @@ Set a default country the SDK should use with
 ```java
 Fidel.country = Fidel.Country.UNITED_KINGDOM;
 ```
-When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`.
+When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`.
 
 ### Documentation
 

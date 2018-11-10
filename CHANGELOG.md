@@ -1,3 +1,12 @@
+## 1.2.1
+- Added the Japan country option.
+- Hidden the PayPal logo in the card scanning UI.
+- Disabled CardIO manual card details entry forms.
+- Improved testing mode user experience and the overall UX.
+- Allow the user to select the consent checkbox, even before filling in any information.
+- Tapping anywhere on the screen dismisses the keyboard.
+- If you don't set a banner image, we'll hide the top space reserved for it.
+
 ## 1.2.0
 - Added the Sweden country option
 - Returns an error, when the SDK encounters it, with the `LinkResult`. Get it with `linkResult.getError()` getter.
