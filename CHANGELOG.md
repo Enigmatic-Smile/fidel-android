@@ -1,3 +1,6 @@
+## 1.2.2
+- Added support for linking American Express cards
+
 ## 1.2.1
 - Added the Japan country option.
 - Hidden the PayPal logo in the card scanning UI.

@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    compile 'com.github.FidelLimited:android-sdk:1.2.1'
+    implementation 'com.github.FidelLimited:android-sdk:1.2.2'
 }
 ```
 
@@ -119,11 +119,13 @@ When you set a default country, the card linking screen will not show the countr
 
 ### Documentation
 
-In test environment use our VISA and Mastercard test card numbers:
+In the test environment please use our VISA, Mastercard or American Express test card numbers:
 
 VISA: _4444000000004***_ (the last 3 numbers can be anything)
 
 Mastercard: _5555000000005***_ (the last 3 numbers can be anything)
+
+American Express: _3400000000003**_ or _3700000000003**_ (the last 2 numbers can be anything)
 
 #### Possible errors
 If you configured Fidel correctly, you will not receive errors after presenting the Card Linking activity. However, we respond with some suggestive errors in case something goes wrong. Please make sure that you test the integration manually as well. It's best to make sure that you configured everything correctly in your app.
