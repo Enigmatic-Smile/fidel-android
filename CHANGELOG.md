@@ -1,3 +1,6 @@
+## 1.2.3
+- Added the Canada country option.
+
 ## 1.2.2
 - Added support for linking American Express cards
 

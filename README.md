@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.2.2'
+    implementation 'com.github.FidelLimited:android-sdk:1.2.3'
 }
 ```
 
@@ -115,7 +115,7 @@ Set a default country the SDK should use with
 ```java
 Fidel.country = Fidel.Country.UNITED_KINGDOM;
 ```
-When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`.
+When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`.
 
 ### Documentation
 
