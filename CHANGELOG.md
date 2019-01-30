@@ -1,5 +1,6 @@
 ## 1.2.3
 - Added the Canada country option.
+- Remove `allowBackup` and `supportsRtl` flags from the SDK's `AndroidManifest.xml` file to allow you to choose to set them as you'd like.
 
 ## 1.2.2
 - Added support for linking American Express cards
