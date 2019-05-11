@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.2.3'
+    implementation 'com.github.FidelLimited:android-sdk:1.3.0'
 }
 ```
 
@@ -113,8 +113,10 @@ The default for `deleteInstructions` is `"going to your account settings"`.
 We currently support _Visa_, _Mastercard_ and _AmericanExpress_, but you can choose to support only one, two or all three. You can do that by using `supportedCardSchemes`. Check the example below:
 
 ```java
-Fidel.supportedCardSchemes = EnumSet.of(Fidel.CardScheme.AMERICAN_EXPRESS, Fidel.CardScheme.VISA);
+Fidel.supportedCardSchemes = EnumSet.of(Fidel.CardScheme.AMERICAN_EXPRESS, Fidel.CardScheme.VISA, Fidel.CardScheme.MASTERCARD);
 ```
+
+The default value of this property includes all three card schemes (_Visa_, _Mastercard_ and _AmericanExpress_)
 
 #### Default country
 
@@ -175,6 +177,7 @@ public enum LinkResultErrorCode {
 - `MISSING_MANDATORY_INFO` - Some of the mandatory information necessary to configure the SDK were not provided. The following are the mandatory info you need to provide:
 	1. `Fidel.apiKey`
 	2. `Fidel.programId`
+	3. `Fidel.supportedCardSchemes`. The default value includes _Visa_, _Mastercard_ and _AmericanExpress_, but if you set this property to `null` or to an empty set, you'll receive the `MISSING_MANDATORY_INFO` error.
 
 ### Feedback
 
