@@ -109,6 +109,13 @@ Fidel.deleteInstructions = "Your delete instructions"; //(Maximum 60 characters)
 The default for `companyName` is `"Company Name"`.
 The default for `deleteInstructions` is `"going to your account settings"`.
 
+#### Supported card schemes
+We currently support _Visa_, _Mastercard_ and _AmericanExpress_, but you can choose to support only one, two or all three. You can do that by using `supportedCardSchemes`. Check the example below:
+
+```java
+Fidel.supportedCardSchemes = EnumSet.of(Fidel.CardScheme.AMERICAN_EXPRESS, Fidel.CardScheme.VISA);
+```
+
 #### Default country
 
 Set a default country the SDK should use with 
