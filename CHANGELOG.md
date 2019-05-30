@@ -1,5 +1,9 @@
 # Fidel Android SDK Change log
 
+## 1.3.1
+
+- Updated gradle and some dependencies.
+
 ## 1.3.0
 
 - Added new property that lets you define the card schemes that you suppport (`supportedCardSchemes`).

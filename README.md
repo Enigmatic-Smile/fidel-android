@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.3.0'
+    implementation 'com.github.FidelLimited:android-sdk:1.3.1'
 }
 ```
 
@@ -33,7 +33,7 @@ And add the following dependencies:
 
 ```java
 implementation 'io.card:android-sdk:5.5.1'
-implementation 'com.google.android.gms:play-services-auth:16.0.0'
+implementation 'com.google.android.gms:play-services-auth:16.0.1'
 ```
 
 Then add a new Fidel SDK module to your project.
