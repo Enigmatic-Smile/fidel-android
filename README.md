@@ -59,6 +59,8 @@ try {
     catch(JSONException e) {
     Log.e(Fidel.FIDEL_DEBUG_TAG, e.getLocalizedMessage());
 }
+
+Fidel.metaData = jsonMeta;
 ```
 
 Then, present the Fidel activity:
