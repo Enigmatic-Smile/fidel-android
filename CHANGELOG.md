@@ -1,5 +1,10 @@
 # Fidel Android SDK Change log
 
+## 1.3.2
+
+- Solved some UI issues.
+- The close button clickable area has been increased.
+
 ## 1.3.1
 
 - Updated gradle and some dependencies.
