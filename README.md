@@ -22,7 +22,7 @@ And finally add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.3.1'
+    implementation 'com.github.FidelLimited:android-sdk:1.3.3'
 }
 ```
 

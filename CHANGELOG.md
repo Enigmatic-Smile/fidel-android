@@ -1,5 +1,9 @@
 # Fidel Android SDK Change log
 
+## 1.3.3
+
+- Tapping the Android back button closes the Fidel UI with the same "user cancelled" error, just like tapping the top left X (close) button.
+
 ## 1.3.2
 
 - Solved some UI issues.
