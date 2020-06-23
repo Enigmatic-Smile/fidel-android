@@ -128,6 +128,14 @@ Fidel.country = Fidel.Country.UNITED_KINGDOM;
 ```
 When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`.
 
+### Consent text for United States and Canada
+When you set United States or Canada as the default country **or** don't set any default country (meaning that the user is free to select United States or Canada as their country), a different consent text will be applied. In addition to the parameters described above, you can set the following parameters in this consent text:
+```java
+Fidel.programName = "your program name"; //(Maximum 60 characters);
+Fidel.termsConditionsURL = "https://yourcompany.com/termsConditionsURL"; //(must be a valid URL)
+```
+The default value for `programName` is `"our"`. If you don't set a privacy policy URL (which is different than the terms & conditions URL), the corresponding wording will not be displayed.
+
 ### Documentation
 
 In the test environment please use our VISA, Mastercard or American Express test card numbers:
@@ -174,12 +182,13 @@ public enum LinkResultErrorCode {
 ```
 
 - `USER_CANCELED` - Sometimes it's useful to know if the user canceled the card linking process so please check for this error, if that's the case.
-- `INVALID_URL` - If you provide an invalid `Fidel.privacyURL`, you will receive this error. Please make sure your URL matches the `Patterns.WEB_URL` pattern.
-- `STRING_OVER_THE_LIMIT` - We send this error in case your `Fidel.deleteInstructions` or `Fidel.companyName` exceed *60* characters.
+- `INVALID_URL` - If you provide an invalid `Fidel.privacyURL` or `Fidel.termsConditionsURL`, you will receive this error. Please make sure your URL matches the `Patterns.WEB_URL` pattern.
+- `STRING_OVER_THE_LIMIT` - We send this error in case your `Fidel.deleteInstructions` or `Fidel.companyName` or `Fidel.programName` exceed *60* characters.
 - `MISSING_MANDATORY_INFO` - Some of the mandatory information necessary to configure the SDK were not provided. The following are the mandatory info you need to provide:
 	1. `Fidel.apiKey`
 	2. `Fidel.programId`
 	3. `Fidel.supportedCardSchemes`. The default value includes _Visa_, _Mastercard_ and _AmericanExpress_, but if you set this property to `null` or to an empty set, you'll receive the `MISSING_MANDATORY_INFO` error.
+	4. `Fidel.termsConditionsURL`. This is mandatory when you set United States or Canada as the default country **or** don't set any default country (meaning that the user is free to select United States or Canada as their country). 
 
 ### Feedback
 
