@@ -4,36 +4,41 @@ This SDK helps you to add card linking technology to your Android apps in minute
 
 ![Demo GIF](https://cl.ly/a47b1852f029/Screen%252520Recording%2525202018-09-18%252520at%25252004.34%252520PM.gif)
 
-### Install with Jitpack
+## Install with Jitpack
+
 [![](https://jitpack.io/v/FidelLimited/android-sdk.svg)](https://jitpack.io/#FidelLimited/android-sdk)
 
 Add [jitpack.io](https://www.jitpack.io) to your root build.gradle at the end of repositories:
 
 ```java
+
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
 }
+
 ```
 
 And finally add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.3.3'
+    implementation 'com.github.FidelLimited:android-sdk:1.4.0'
 }
 ```
 
-### Manual setup
+## Manual setup
+
 You can manually download FidelSDK.aar and import it as a new .jar/.aar module with *File / New Module / Import .JAR/.AAR package* command.
 
 And add the following dependencies:
 
 ```java
 implementation 'io.card:android-sdk:5.5.1'
-implementation 'com.google.android.gms:play-services-auth:16.0.1'
+implementation 'com.google.android.gms:play-services-auth:18.1.0'
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 ```
 
 Then add a new Fidel SDK module to your project.
@@ -112,6 +117,7 @@ The default for `companyName` is `"Company Name"`.
 The default for `deleteInstructions` is `"going to your account settings"`.
 
 #### Supported card schemes
+
 We currently support _Visa_, _Mastercard_ and _AmericanExpress_, but you can choose to support only one, two or all three. You can do that by using `supportedCardSchemes`. Check the example below:
 
 ```java
@@ -122,13 +128,39 @@ The default value of this property includes all three card schemes (_Visa_, _Mas
 
 #### Default country
 
-Set a default country the SDK should use with 
+To set a default country for the SDK you should use:
+
 ```java
 Fidel.country = Fidel.Country.UNITED_KINGDOM;
 ```
+
 When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`.
 
-### Documentation
+## Consent text for United States and Canada
+
+When you set United States or Canada as the default country **or** don't set a default country (meaning that the user is free to select United States or Canada as their country), a different consent text will be applied. In addition to the parameters described above, you can set the following parameters in this consent text:
+
+```java
+Fidel.programName = "your program name"; // (Maximum 60 characters);
+Fidel.termsConditionsURL = "https://yourcompany.com/termsConditionsURL"; // (must be a valid URL)
+```
+
+The default value for `programName` is `"our"` (in English; for other languages, the words adjust to make sense). The `termsConditionsURL` is mandatory in this case.
+If you don't set a privacy policy URL (which is different than the terms & conditions URL), the corresponding wording will not be displayed.
+
+For USA & Canada, the following would be an example Terms & Conditions text, for Cashback Inc (an example company name):
+
+*By submitting your card information and checking this box, you authorize Visa to monitor and share transaction data with Fidel (our service provider) to participate in  program. You also acknowledge and agree that Fidel may share certain details of your qualifying transactions with Cashback Inc to enable your participation in  program and for other purposes in accordance with the Cashback Inc Terms and Conditions, Cashback Inc privacy policy and Fidel’s Privacy Policy. You may opt-out of transaction monitoring on the linked card at any time by contacting support.*
+
+For the rest of the world:
+
+*I authorise Visa to monitor my payment card to identify transactions that qualify for a reward and for Visa to share such information with Cashback Inc, to enable my card linked offers and target offers that may be of interest to me. For information about Cashback Inc privacy practices, please see the privacy policy. You may opt-out of transaction monitoring on the payment card you entered at any time by contacting support.*
+
+## Localisation
+
+The SDK's default language is English, but it's also localised for French and Swedish languages. When the device has either `Français (Canada)` or `Svenska (Sverige)` as its language, the appropriate texts will be displayed. Please note that developer error messages are in English only and they will not be displayed to the user.
+
+## Documentation
 
 In the test environment please use our VISA, Mastercard or American Express test card numbers:
 
@@ -139,6 +171,7 @@ Mastercard: _5555000000005***_ (the last 3 numbers can be anything)
 American Express: _3400000000003**_ or _3700000000003**_ (the last 2 numbers can be anything)
 
 #### Possible errors
+
 If you configured Fidel correctly, you will not receive errors after presenting the Card Linking activity. However, we respond with some suggestive errors in case something goes wrong. Please make sure that you test the integration manually as well. It's best to make sure that you configured everything correctly in your app.
 
 In case something is not configured correctly, after attempting to present the Fidel card linking activity, you can also subscribe for checking for any errors:
@@ -162,6 +195,7 @@ super.onActivityResult(requestCode, resultCode, data);
 In case an error is encountered we send a `LinkResultError` object with the `LinkResult` object. Retrieve the `LinkResultError` object by calling `linkResult.getError()` as demonstrated above.
 
 #### The `LinkResultError` object
+
 The `LinkResultError` object has the `message` and `errorCode` properties which might be useful for you. The `errorCode` property has the following codes:
 
 ```java
@@ -181,11 +215,12 @@ public enum LinkResultErrorCode {
 	2. `Fidel.programId`
 	3. `Fidel.supportedCardSchemes`. The default value includes _Visa_, _Mastercard_ and _AmericanExpress_, but if you set this property to `null` or to an empty set, you'll receive the `MISSING_MANDATORY_INFO` error.
 
-### Feedback
+## Feedback
 
 The FIDEL SDK is in active development, we welcome your feedback!
 
 Get in touch:
 
 GitHub Issues - For SDK issues and feedback
-FIDEL Developers Slack Channel - [https://fidel-developers-slack-invites.herokuapp.com](https://fidel-developers-slack-invites.herokuapp.com) - for personal support at any phase of integration
+
+Fidel Developers Forum - [https://community.fidel.uk](https://community.fidel.uk) - for personal support at any phase of integration
