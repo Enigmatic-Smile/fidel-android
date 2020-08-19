@@ -4,31 +4,36 @@ This SDK helps you to add card linking technology to your Android apps in minute
 
 ![Demo GIF](https://cl.ly/a47b1852f029/Screen%252520Recording%2525202018-09-18%252520at%25252004.34%252520PM.gif)
 
+
 ## Installation
 
 ### Install with Jitpack
+
 [![](https://jitpack.io/v/FidelLimited/android-sdk.svg)](https://jitpack.io/#FidelLimited/android-sdk)
 
 Add [jitpack.io](https://www.jitpack.io) to your root build.gradle at the end of repositories:
 
 ```java
+
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
 }
+
 ```
 
 In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.3.3'
+    implementation 'com.github.FidelLimited:android-sdk:1.4.0'
 }
 ```
 
-### Manual setup
+## Manual setup
+
 You can manually download FidelSDK.aar and import it as a new .jar/.aar module with *File / New Module / Import .JAR/.AAR package* command.
 
 ### Dependencies
@@ -38,6 +43,7 @@ Regardless of whether you install using JitPack or choose the manual installatio
 ```java
 implementation 'io.card:android-sdk:5.5.1'
 implementation 'com.google.android.gms:play-services-auth:18.1.0'
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 ```
 
 Then add a new Fidel SDK module to your project.
@@ -115,6 +121,7 @@ Fidel.deleteInstructions = "Your delete instructions"; //(Maximum 60 characters)
 The default for `companyName` is `"Company Name"`.
 The default for `deleteInstructions` is `"going to your account settings"`.
 
+
 ## Options documentation
 
 ### bannerImage
@@ -127,11 +134,14 @@ Fidel.bannerImage = Bitmap(...);
 
 ### country
 
-Set a default country the SDK should use with 
+To set a default country for the SDK you should use:
+
 ```java
 Fidel.country = Fidel.Country.UNITED_KINGDOM;
 ```
+
 When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`.
+
 
 ### supportedCardSchemes
 We currently support _Visa_, _Mastercard_ and _AmericanExpress_, but you can choose to support only one, two or all three. You can do that by using `supportedCardSchemes`. Check the example below:
@@ -302,8 +312,9 @@ Notice the following excerpt from the consent text above: _...may be of interest
 
 If you do not set a ```privacyURL```, the text will become _...may be of interest to me. You may opt-out of..._
 
-## Localization
-The SDK supports French and Swedish. When the device language is set to either `Français` or `Svenska`, the appropriate strings will be displayed. Note that developer error messages are in English only and will not be displayed to the user.
+## Localisation
+
+The SDK's default language is English, but it's also localised for French and Swedish languages. When the device has either `Français (Canada)` or `Svenska (Sverige)` as its language, the appropriate texts will be displayed. Please note that developer error messages are in English only and they will not be displayed to the user.
 
 ## Test card numbers
 
@@ -315,7 +326,10 @@ Mastercard: _5555000000005***_ (the last 3 numbers can be anything)
 
 American Express: _3400000000003**_ or _3700000000003**_ (the last 2 numbers can be anything)
 
+
 ### Possible errors
+=======
+
 If you configured Fidel correctly, you will not receive errors after presenting the Card Linking activity. However, we respond with some suggestive errors in case something goes wrong. Please make sure that you test the integration manually as well. It's best to make sure that you configured everything correctly in your app.
 
 In case something is not configured correctly, after attempting to present the Fidel card linking activity, you can also subscribe for checking for any errors:
@@ -339,6 +353,7 @@ super.onActivityResult(requestCode, resultCode, data);
 In case an error is encountered we send a `LinkResultError` object with the `LinkResult` object. Retrieve the `LinkResultError` object by calling `linkResult.getError()` as demonstrated above.
 
 #### The `LinkResultError` object
+
 The `LinkResultError` object has the `message` and `errorCode` properties which might be useful for you. The `errorCode` property has the following codes:
 
 ```java
@@ -366,4 +381,5 @@ The FIDEL SDK is in active development, we welcome your feedback!
 Get in touch:
 
 GitHub Issues - For SDK issues and feedback
-FIDEL Developers Slack Channel - [https://fidel-developers-slack-invites.herokuapp.com](https://fidel-developers-slack-invites.herokuapp.com) - for personal support at any phase of integration
+
+Fidel Developers Forum - [https://community.fidel.uk](https://community.fidel.uk) - for personal support at any phase of integration
