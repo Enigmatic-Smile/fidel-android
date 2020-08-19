@@ -328,7 +328,6 @@ American Express: _3400000000003**_ or _3700000000003**_ (the last 2 numbers can
 
 
 ### Possible errors
-=======
 
 If you configured Fidel correctly, you will not receive errors after presenting the Card Linking activity. However, we respond with some suggestive errors in case something goes wrong. Please make sure that you test the integration manually as well. It's best to make sure that you configured everything correctly in your app.
 
