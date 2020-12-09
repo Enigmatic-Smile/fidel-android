@@ -132,15 +132,18 @@ Use this option to customize the topmost banner image with the Fidel UI. If you 
 Fidel.bannerImage = Bitmap(...);
 ```
 
-### country
+### allowedCountries
 
-To set a default country for the SDK you should use:
+To set the countries that the users can select, use
 
 ```java
-Fidel.country = Fidel.Country.UNITED_KINGDOM;
+Fidel.allowedCountries = new Fidel.Country[]{Fidel.Country.UNITED_KINGDOM, Fidel.Country.JAPAN, Fidel.Country.CANADA};
 ```
 
-When you set a default country, the card linking screen will not show the country picker UI. The other options, for now, are: `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`.
+The possible options are: `.UNITED_KINGDOM`, `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`. You can set zero, one or multiple of these countries. 
+If you don't set any allowed countries, the user will be able to choose any of the countries above.
+If you set only one country, the card linking screen will not show the country picker UI.
+Note that, when you set multiple countries, they will be displayed in the country picker UI in the order that you set them.
 
 
 ### supportedCardSchemes
@@ -207,7 +210,7 @@ Fidel.privacyURL = "https://yourcompany.com/privacyURL"; //(must be a valid URL)
 
 ### programName (applied to the consent text only for USA and Canada)
 
-Set your program name as it will appear in the consent text. Note that **this parameter is optional** and used when you set United States or Canada as the default country or don't set a default country (meaning that the user is free to select United States or Canada as their country). Please set it to a maximum of 60 characters.
+Set your program name as it will appear in the consent text. Note that **this parameter is optional** and used when you set United States and/or Canada as allowed countries or don't set any allowed countries (meaning that the user is free to select United States or Canada as their country). Please set it to a maximum of 60 characters.
 
 ```java
 Fidel.programName = "your program name"; //(Maximum 60 characters);
@@ -215,7 +218,7 @@ Fidel.programName = "your program name"; //(Maximum 60 characters);
 
 ### termsConditionsURL (applied to the consent text only for USA and Canada)
 
-This is the terms & conditions URL that you can set for the consent text. Note that **this parameter is mandatory** when you set United States or Canada as the default country or don't set a default country (meaning that the user is free to select United States or Canada as their country).
+This is the terms & conditions URL that you can set for the consent text. Note that **this parameter is mandatory** when you set United States and/or Canada as allowed countries or don't set any allowed countries (meaning that the user is free to select United States or Canada as their country)
 
 ```java
 Fidel.termsConditionsURL = "https://yourcompany.com/termsConditionsURL"; //(Maximum 60 characters);
@@ -250,11 +253,11 @@ This parameter is taken into account only for USA and Canada. The default value 
 This parameter is mandatory for USA and Canada. Once set, it will be applied as a hyperlink on the ```Terms and Conditions``` text.
 
 
-Note that the consent text has a different form depending on the country you set or the country the user can select. Below you can find the specifics for each case.
+Note that the consent text has a different form depending on the allowed countries you set or the country the user can select. Below you can find the specifics for each case.
 
 ### Consent text for United States and Canada
 
-When you set United States or Canada as the default country or don't set a default country (meaning that the user is free to select United States or Canada as their country), a different consent text will be applied.
+When you set United States and/or Canada as allowed countries or don't set any countries (meaning that the user is free to select United States or Canada as their country), a different consent text will be applied.
 
 For USA & Canada, the following would be an example Terms & Conditions text for ```Cashback Inc``` (an example company) that uses ```Awesome Bonus``` as their program name:
 
@@ -263,16 +266,16 @@ For USA & Canada, the following would be an example Terms & Conditions text for 
 There are two specific parameters that you can set for this consent text:
 
 #### 1. termsConditionsURL
-This parameter is mandatory when you set United States or Canada as the default country or don't set a default country. When you set this parameter, the ```Terms and Conditions``` from the consent text will get a hyperlink with the URL you set.
+This parameter is mandatory when you set United States and/or Canada as allowed countries or don't set any countries (meaning that the user is free to select United States or Canada as their country). When you set this parameter, the ```Terms and Conditions``` from the consent text will get a hyperlink with the URL you set.
 
 ```java
 Fidel.termsConditionsURL = "https://yourcompany.com/termsConditionsURL";
 ```
 
-If you don't set this parameter, you'll get an error when trying to open the card linking interface: ```You have set a North American default country or you allow the user to select a North American country. For North American countries it is mandatory for you to provide the Terms and Conditions URL.```
+If you don't set this parameter, you'll get an error when trying to open the card linking interface: ```You have included a North American country in the list of allowed countries or you allow the user to select a North American country. For North American countries it is mandatory for you to provide the Terms and Conditions URL.```
 
 #### 2. programName
-This parameter is optional when you set United States or Canada as the default country or don't set a default country. If you don't set a program name, we'll use ```our``` as the default value (for example, in the text above, you would see *...to monitor and share transaction data with Fidel (our service provider) to participate in ```our``` program...*)
+This parameter is optional when you set United States and/or Canada as allowed countries or don't set any countries. If you don't set a program name, we'll use ```our``` as the default value (for example, in the text above, you would see *...to monitor and share transaction data with Fidel (our service provider) to participate in ```our``` program...*)
 
 ```java
 Fidel.programName = "your program name";
@@ -292,7 +295,7 @@ If you do not set a ```privacyURL```, the text will become _in accordance with t
 
 ### Consent text for the rest of the world
 
-When you set United Kingdom, Ireland, Japan or Sweden as the default country or the user selects one of these countries from the list, a consent text specific for these countries will be applied.
+When you set United Kingdom, Ireland, Japan and/or Sweden as allowed countries or the user is able to select one of these countries from the list, a consent text specific for these countries will be applied.
 
 The following would be an example Terms & Conditions text for ```Cashback Inc``` (an example company):
 
@@ -372,6 +375,7 @@ public enum LinkResultErrorCode {
 	2. `Fidel.programId`
 	3. `Fidel.supportedCardSchemes`. The default value includes _Visa_, _Mastercard_ and _AmericanExpress_, but if you set this property to `null` or to an empty set, you'll receive the `MISSING_MANDATORY_INFO` error.
 	4. `Fidel.termsConditionsURL`. This is mandatory when you set United States or Canada as the default country **or** don't set any default country (meaning that the user is free to select United States or Canada as their country). 
+    5. `Fidel.allowedCountries`. The default value includes _UNITED_KINGDOM_, _IRELAND_, _UNITED_STATES_, _SWEDEN_, _JAPAN_ and _CANADA_, but if you set this property to `null` you'll receive the `MISSING_MANDATORY_INFO` error.
 
 ## Feedback
 
