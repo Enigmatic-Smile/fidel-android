@@ -1,5 +1,10 @@
 # Fidel Android SDK Change log
 
+## 1.5.0
+
+- Now the SDK allows you to select multiple allowed countries from which the user can pick. Please check the docs for the new `allowedCountries` property.
+- Removed the `Fidel.country` property. To set a default country and not allow the user to pick the country, set a single country in the new `Fidel.allowedCountries` array.
+
 ## 1.4.0
 
 - Localised the SDK for French and Swedish users.
