@@ -4,7 +4,6 @@ This SDK helps you to add card linking technology to your Android apps in minute
 
 ![Demo GIF](https://cl.ly/a47b1852f029/Screen%252520Recording%2525202018-09-18%252520at%25252004.34%252520PM.gif)
 
-
 ## Installation
 
 ### Install with Jitpack
@@ -28,7 +27,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.4.0'
+    implementation 'com.github.FidelLimited:android-sdk:1.5.1'
 }
 ```
 

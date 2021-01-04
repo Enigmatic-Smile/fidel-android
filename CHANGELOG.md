@@ -1,5 +1,9 @@
 # Fidel Android SDK Change log
 
+## 1.5.1
+
+- If available, the LinkResult object now includes the `firstNumbers` field. So, if in the Fidel Dashboard, under the your security settings, you allow showing the first numbers of the linked card numbers, the information will be available in the LinkResult object too. If you do not allow showing the first numbers in the linking result, the `firstNumbers` field will return `"******"` (just like the object which the Fidel API returns).
+
 ## 1.5.0
 
 - Now the SDK allows you to select multiple allowed countries from which the user can pick. Please check the docs for the new `allowedCountries` property.
