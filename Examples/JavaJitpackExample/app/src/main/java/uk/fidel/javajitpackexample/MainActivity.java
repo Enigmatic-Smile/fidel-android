@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
         Fidel.setCardLinkingObserver(new FidelCardLinkingObserver() {
             @Override
             public void onCardLinkingFailed(LinkResultError linkResultError) {
-                Log.e("Fidel Error", "Error message = " + linkResultError.message);
+                Log.e(Fidel.FIDEL_DEBUG_TAG, "Error message = " + linkResultError.message);
             }
 
             @Override
             public void onCardLinkingSucceeded(LinkResult linkResult) {
-                Log.d("Fidel Debug Info", "The link ID = " + linkResult.id);
+                Log.d(Fidel.FIDEL_DEBUG_TAG, "The link ID = " + linkResult.id);
             }
         });
     }
@@ -104,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
                 LinkResult linkResult = data.getParcelableExtra(Fidel.FIDEL_LINK_CARD_RESULT_CARD);
                 LinkResultError error = linkResult.getError();
                 if (error != null) {
-                    Log.e("Fidel Error", "Error message = " + error.message);
+                    Log.e(Fidel.FIDEL_DEBUG_TAG, "Error message = " + error.message);
                 } else {
-                    Log.d("Fidel Debug Info", "The link ID = " + linkResult.id);
+                    Log.d(Fidel.FIDEL_DEBUG_TAG, "The link ID = " + linkResult.id);
                 }
             }
         }
