@@ -1,5 +1,10 @@
 # Fidel Android SDK Change log
 
+## 1.5.3
+
+- Improved compatibility with Kotlin projects
+- Updated dependencies
+
 ## 1.5.2
 
 - Improved the user experience by making the form static when switching the focus from one text input field to another. Previously the form was scrolling to show the focused text field on top of the screen. For this reason the banner image was hidden when display the card linking activity. Now the banner image is always visible and we do no scrolling animations when switching the focus from one text field to another.
