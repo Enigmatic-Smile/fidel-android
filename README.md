@@ -27,7 +27,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.5.2'
+    implementation 'com.github.FidelLimited:android-sdk:1.5.3'
 }
 ```
 
@@ -40,9 +40,10 @@ You can manually download FidelSDK.aar and import it as a new .jar/.aar module w
 Regardless of whether you install using JitPack or choose the manual installation, you must add the following dependencies to your app/build.gradle file:
 
 ```java
-implementation 'io.card:android-sdk:5.5.1'
-implementation 'com.google.android.gms:play-services-auth:18.1.0'
+implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+implementation 'com.google.android.gms:play-services-auth:19.0.0'
+implementation 'io.card:android-sdk:5.5.1'
 ```
 
 Then add a new Fidel SDK module to your project.
