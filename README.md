@@ -41,7 +41,7 @@ Regardless of whether you install using JitPack or choose the manual installatio
 
 ```java
 implementation 'io.card:android-sdk:5.5.1'
-implementation 'com.google.android.gms:play-services-auth:18.1.0'
+implementation 'com.google.android.gms:play-services-auth:19.0.0'
 implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 ```
 
