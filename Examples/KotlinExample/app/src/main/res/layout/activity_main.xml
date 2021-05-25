@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.fidel.javajitpackexample.MainActivity">
+    tools:context="uk.fidel.kotlinexample.MainActivity">
 
     <Button
         android:id="@+id/btn_link_card"

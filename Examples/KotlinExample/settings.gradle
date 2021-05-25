@@ -1,2 +1,3 @@
+include ':FidelSDK'
 include ':app'
 rootProject.name = "KotlinExample"

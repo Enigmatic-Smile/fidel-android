@@ -1,4 +1,4 @@
-package uk.fidel.kotlinexample
+package uk.fidel.kotlinjitpackexample
 
 import android.content.Intent
 import android.graphics.BitmapFactory
