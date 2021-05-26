@@ -18,12 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Check this function to see an example of Fidel SDK configuration
 
         // Check this function to see an example of Fidel SDK configuration
         setupFidelSDK()
-
-        // On click of the button present the Fidel card linking UI
 
         // On click of the button present the Fidel card linking UI
         val linkCardButton = findViewById<Button>(R.id.btn_link_card)
