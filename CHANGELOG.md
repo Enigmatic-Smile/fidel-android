@@ -1,5 +1,8 @@
 # Fidel Android SDK Change log
 
+## 1.5.4
+- Improvements to allow more automation for quality assurance and speed of new SDK version delivery.
+
 ## 1.5.3
 
 - Improved compatibility with Kotlin projects
