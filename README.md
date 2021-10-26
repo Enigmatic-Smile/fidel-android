@@ -27,7 +27,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.5.5'
+    implementation 'com.github.FidelLimited:android-sdk:1.5.6'
 }
 ```
 
@@ -140,7 +140,7 @@ To set the countries that the users can select, use
 Fidel.allowedCountries = new Fidel.Country[]{Fidel.Country.UNITED_KINGDOM, Fidel.Country.JAPAN, Fidel.Country.CANADA};
 ```
 
-The possible options are: `.UNITED_KINGDOM`, `.UNITED_STATES`, `.IRELAND`, `.SWEDEN`, `.JAPAN`, `.CANADA`. You can set one or multiple of these countries. 
+The possible options are: `.CANADA`, `.IRELAND`, `.JAPAN`, `.SWEDEN`, `.UNITED_ARAB_EMIRATES`, `.UNITED_KINGDOM`, `.UNITED_STATES`. You can set one or multiple of these countries. 
 If you don't set any allowed countries, the user will be able to choose any of the countries above.
 If you set only one country, the card linking screen will not show the country picker UI.
 Note that, when you set multiple countries, they will be displayed in the country picker UI in the order that you set them.
@@ -295,7 +295,7 @@ If you do not set a ```privacyURL```, the text will become _in accordance with t
 
 ### Consent text for the rest of the world
 
-When you set United Kingdom, Ireland, Japan and/or Sweden as allowed countries or the user is able to select one of these countries from the list, a consent text specific for these countries will be applied.
+When you set Ireland, Japan, Sweden, United Arab Emirates and/or United Kingdom as allowed countries or the user is able to select one of these countries from the list, a consent text specific for these countries will be applied.
 
 The following would be an example Terms & Conditions text for ```Cashback Inc``` (an example company):
 
@@ -375,7 +375,7 @@ public enum LinkResultErrorCode {
 	2. `Fidel.programId`
 	3. `Fidel.supportedCardSchemes`. The default value includes _Visa_, _Mastercard_ and _AmericanExpress_, but if you set this property to `null` or to an empty set, you'll receive the `MISSING_MANDATORY_INFO` error.
 	4. `Fidel.termsConditionsURL`. This is mandatory when you set United States and/or Canada as allowed countries **or** don't set any allowed countries (meaning that the user is free to select United States or Canada as their country). 
-    5. `Fidel.allowedCountries`. The default value includes _UNITED_KINGDOM_, _IRELAND_, _UNITED_STATES_, _SWEDEN_, _JAPAN_ and _CANADA_, but if you set this property to `null` or to an empty array you'll receive the `MISSING_MANDATORY_INFO` error.
+    5. `Fidel.allowedCountries`. The default value includes _CANADA_ _IRELAND_, _JAPAN_, _SWEDEN_, _UNITED_ARAB_EMIRATES_, _UNITED_KINGDOM_ and _UNITED_STATES_, but if you set this property to `null` or to an empty array you'll receive the `MISSING_MANDATORY_INFO` error.
 
 ## Feedback
 
