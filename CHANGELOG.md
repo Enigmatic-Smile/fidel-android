@@ -1,5 +1,9 @@
 # Fidel Android SDK Change log
 
+## 1.6.0
+
+- Removed the card scanning confirmation screen. Users can confirm their card information by checking the information in the Fidel card enrollment screen.
+
 ## 1.5.6
 - Add United Arab Emirates option as a country of issuance.
 - Country text view shrinks its fonts size, to fit longer country names, on smaller devices.
