@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         // The countries that you will allow users to pick from.
         // If only one country is set, users will not need to pick a country.
         Fidel.allowedCountries = Fidel.Country.values()
+        // Sets the default selected country when the user opens the card enrollment screen.
+        Fidel.defaultSelectedCountry = Fidel.Country.UNITED_STATES
         // The company name will be mentioned in the card linking consent text
         Fidel.companyName = "Cashback Inc."
         // The privacy URL used in the card linking consent text

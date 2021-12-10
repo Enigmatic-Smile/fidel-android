@@ -1,5 +1,8 @@
 # Fidel Android SDK Change log
 
+## 1.7.0
+- Added the `defaultSelectedCountry` property which sets the country that will be selected by default, when opening the card enrollment screen.
+
 ## 1.6.0
 
 - Removed the card scanning confirmation screen. Users can confirm their card information by checking the information in the Fidel card enrollment screen.

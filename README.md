@@ -27,7 +27,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.6.0'
+    implementation 'com.github.FidelLimited:android-sdk:1.7.0'
 }
 ```
 
@@ -40,10 +40,11 @@ You can manually download FidelSDK.aar and import it as a new .jar/.aar module w
 Regardless of whether you install using JitPack or choose the manual installation, you must add the following dependencies to your app/build.gradle file:
 
 ```java
-implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-implementation 'com.google.android.gms:play-services-auth:19.0.0'
+implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 implementation 'io.card:android-sdk:5.5.1'
+implementation 'com.google.android.gms:play-services-auth:19.0.0'
+implementation 'androidx.core:core-ktx:1.6.0'
 ```
 
 Then add a new Fidel SDK module to your project.
@@ -145,6 +146,17 @@ If you don't set any allowed countries, the user will be able to choose any of t
 If you set only one country, the card linking screen will not show the country picker UI.
 Note that, when you set multiple countries, they will be displayed in the country picker UI in the order that you set them.
 
+### defaultSelectedCountry
+
+Use this parameter to set the country that will be selected by default when opening the card enrollment screen.
+
+```java
+Fidel.defaultSelectedCountry = Fidel.Country.UNITED_KINGDOM;
+```
+
+The possible options are: `.CANADA`, `.IRELAND`, `.JAPAN`, `.SWEDEN`, `.UNITED_ARAB_EMIRATES`, `.UNITED_KINGDOM`, `.UNITED_STATES`. The `defaultSelectedCountry` has to be part of the `allowedCountries` list.
+
+The default value of this option is `Fidel.Country.UNITED_KINGDOM`.
 
 ### supportedCardSchemes
 We currently support _Visa_, _Mastercard_ and _AmericanExpress_, but you can choose to support only one, two or all three. You can do that by using `supportedCardSchemes`. Check the example below:
