@@ -32,5 +32,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // Adds Fidel Android SDK as a dependency of your module
-    implementation 'com.github.FidelLimited:android-sdk:1.7.0'
+    implementation 'com.github.FidelLimited:android-sdk:1.7.1'
 }

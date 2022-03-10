@@ -8,8 +8,6 @@ This SDK helps you to add card linking technology to your Android apps in minute
 
 ### Install with Jitpack
 
-[![](https://jitpack.io/v/FidelLimited/android-sdk.svg)](https://jitpack.io/#FidelLimited/android-sdk)
-
 Add [jitpack.io](https://www.jitpack.io) to your root build.gradle at the end of repositories:
 
 ```java
@@ -27,7 +25,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.7.0'
+    implementation 'com.github.FidelLimited:android-sdk:1.7.1'
 }
 ```
 
