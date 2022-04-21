@@ -1,5 +1,8 @@
 # Fidel Android SDK Change log
 
+## 1.7.2
+- Update Fidel API logo
+
 ## 1.7.1
 - Add support for the `resConfigs` optimization parameter. Now, if your app attempts to optimize resources and set the `resConfigs` parameter in gradle (which might remove some of our string resources), our SDK will display either strings in the default language (English) or in one of the languages supported by your app. This also depends on the device language and how the Android system resolves string resources.
 
