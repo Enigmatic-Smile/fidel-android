@@ -25,7 +25,7 @@ In your app/build.gradle file, add Fidel dependency
 
 ```java
 dependencies {
-    implementation 'com.github.FidelLimited:android-sdk:1.7.2'
+    implementation 'com.github.FidelLimited:android-sdk:1.7.3'
 }
 ```
 

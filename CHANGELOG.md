@@ -1,5 +1,8 @@
 # Fidel Android SDK Change log
 
+## 1.7.3
+- Replace "Fidel" with "Fidel API" in the consent text.
+
 ## 1.7.2
 - Update Fidel API logo
 
