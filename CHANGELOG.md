@@ -1,7 +1,10 @@
 # Fidel Android SDK Change log
 
+## 1.7.5
+- Allow expiration date editing without switching to country selection.
+
 ## 1.7.4
-- - Allow expiration date editing without switching to country selection.
+- Allow expiration date editing without switching to country selection.
 
 ## 1.7.3
 - Replace "Fidel" with "Fidel API" in the consent text.
