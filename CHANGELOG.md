@@ -1,7 +1,7 @@
 # Fidel Android SDK Change log
 
 ## 1.7.5
-- Allow expiration date editing without switching to country selection.
+- Updated the consent text for United States and Canadian issued cards.
 
 ## 1.7.4
 - Allow expiration date editing without switching to country selection.
