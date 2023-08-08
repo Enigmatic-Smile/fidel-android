@@ -1,5 +1,11 @@
 # Fidel Android SDK Change log
 
+## 2.0.0
+- Removed card scanning
+- Added stream program type support
+- Renamed some configuration fields, see migration guide for more details
+- This release contains breaking changes, please check the migration guide
+
 ## 1.7.5
 - Updated the consent text for United States and Canadian issued cards.
 
