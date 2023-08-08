@@ -4,13 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
     defaultConfig {
+        compileSdk 33
         applicationId "uk.fidel.kotlinexample"
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -30,6 +28,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'uk.fidel.kotlinexample'
 }
 
 dependencies {
@@ -42,5 +41,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
-    implementation 'io.card:android-sdk:5.5.1'
+
+    //please add the following 3 dependencies if you use the AAR file
+    implementation 'com.scottyab:rootbeer-lib:0.1.0'
+    implementation 'io.split.client:android-client:2.13.1'
+    implementation 'androidx.work:work-runtime-ktx:2.8.1'
 }
