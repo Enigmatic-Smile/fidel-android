@@ -1,3 +1,0 @@
-include ':FidelSDK'
-include ':app'
-rootProject.name = "JavaExample"
