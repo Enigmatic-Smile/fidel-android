@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KotlinStreamExample"
+rootProject.name = "ExpenseManagementUseCaseExample"
 include(":app")
