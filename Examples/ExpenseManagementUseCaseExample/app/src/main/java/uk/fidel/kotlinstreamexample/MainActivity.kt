@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
          */
         Fidel.sdkKey = "pk_test_your_sdk_key"
         Fidel.supportedCardSchemes =
-            setOf(CardScheme.VISA, CardScheme.MASTERCARD, CardScheme.AMERICAN_EXPRESS)
+            setOf(CardScheme.VISA)
         Fidel.companyName = "[Developer company]"
         Fidel.termsAndConditionsUrl = "https://fidel.uk"
         Fidel.privacyPolicyUrl = "https://fidel.uk"
