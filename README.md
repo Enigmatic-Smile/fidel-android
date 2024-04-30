@@ -7,8 +7,8 @@ This SDK helps you to add card linking technology to your Android apps in minute
 ## Installation and Documentation
 
 Please see the documentation for our SDK on our website:
-- [Transaction Stream API](https://fidelapi.com/docs/stream/sdks/android/guide)
-- [Select Transactions API v1](https://fidelapi.com/docs/select/sdks/android/guide)
+- [Transaction Stream API](https://fidelapi.com/docs/stream/sdks/android/guide-v2)
+- [Select Transactions API v1](https://fidelapi.com/docs/select/sdks/android/guide-v2)
 
 ## Feedback
 
